@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #header{
+            background: #faf7f7;   
+            width: 100%;      
+            align-items: center;
+            padding: 12px 12px 12px 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #header > .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;         
+        }
+        nav ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            list-style: none;
+            margin: auto;           
+        }
+        nav ul li{
+            display: inline;
+            margin: 0 10px;
+        }
+        nav > ul > li > a{
+            text-decoration: none;
+            color: #d1d1d1;
+            cursor: pointer;
+            transition: 80ms;
+        }
+        nav > ul > li > a:hover{
+            text-decoration: none;
+            color: #e88005;
+        }
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #dedcdc;
+        }
+        section{
+            height: 85svh;
+            width: 100%;
+        }
+        section > .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            margin: auto;
+            padding: 10px auto;
+            height: 100%;  
+            width: 50rem; 
+        }    
+        section > .container > .calculator-keypad > div{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 25%;
+            gap: 5px;
+            background: #d1d1d1;
+        }
+        section > .container > .calculator-keypad > div > button{
+            width: 100%;
+            height: 95%;
+            border-radius: 12px;
+            background: #e88005;
+            color: #915000;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            transition: 80ms;
+        }
+        section > .container > .calculator-keypad > div > button:hover{
+            background: #d2ba9d;
+            color: #915000;
+        }
+        section > .container > .calculator-keypad{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 35%;
+            height: 50%;
+            background: #faf7f7;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section > .container > .calculator-title{
+            margin-bottom: 20px;
+            /* background: #faf7f7;
+            width: 35%;
+            height: 50px; */
+        }
+        section > .container > .calculator-title > h3{
+            font-size: 40px;
+            color: #333;
+            
+        }
+        section > .container > .calulator-display{
+            background: #ced8d9;
+            width:35%;
+            height: 50px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 12px;
+            border-radius: 5px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            margin-bottom: 20px;
+        }
+        section > .container > .calulator-display > .display-total{
+            font-size: 24px;
+            color: #817f7f;
+        }
+       
+        footer{
+            color: #d1d1d1;
+            background: #faf7f7;   
+            width: 100%;      
+            text-align: end;
+            padding: 12px 12px 12px 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<!-- TODO: make it a scientific calculator. -->
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="https://cdn2.iconfinder.com/data/icons/ios7-inspired-mac-icon-set/512/Calculator_512.png" alt="calc" height="50px" width="50px"/>
+            </div>
+            <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            </div>
+        </div>
+    </header>
+    <section id="main">
+            <div class="container">
+                <div class="calculator-title">
+                    <h3>CALCULATOR</h3>
+                </div>
+                <div class="calulator-display">
+                    <span class="display-total">0</span>
+                </div>
+                <div class="calculator-keypad">
+                    <div class="calulator-keypad-row-one">
+                        <button class="btn-number">1</button>
+                        <button class="btn-number">2</button>
+                        <button class="btn-number">3</button>
+                        <button class="btn-number">4</button>
+                    </div>
+                    <div class="calulator-keypad-row-two">
+                        <button class="btn-number">5</button>
+                        <button class="btn-number">6</button>
+                        <button class="btn-number">7</button>
+                        <button class="btn-number">8</button>
+                    </div>
+                    <div class="calulator-keypad-row-three">
+                        <button class="btn-number">9</button>
+                        <button class="btn-number">0</button>
+                        <button class="btn-operator">+</button>
+                        <button class="btn-operator">-</button>
+                    </div>
+                    <div class="calulator-keypad-row-four">
+                        <button class="btn-operator">*</button>
+                        <button class="btn-operator">/</button>
+                        <button class="btn-clear">C</button>
+                    </div>
+                    <div class="calculator-keypad-row-five">                        
+                        <button class="btn-calculate">=</button>                        
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2025 Calculator</p>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript">
+const displayTotal = document.querySelector('.display-total');
+let total = 0;           // Running total
+let currentInput = '';   // Accumulating digits for the current number
+let operator = '';       // Current operator
+
+// Handle number button clicks
+document.querySelectorAll('.btn-number').forEach(button => {
+    button.addEventListener('click', () => {
+        currentInput += button.textContent; // Append digit to current input
+        displayTotal.innerHTML = currentInput; // Show the current input
+    });
+});
+
+// Define operator functions
+const operators = {
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+    '*': (a, b) => a * b,
+    '/': (a, b) => (b !== 0 ? a / b : 'Error: Division by zero'),
+};
+
+// Handle operator button clicks
+document.querySelectorAll('.btn-operator').forEach(button => {
+    button.addEventListener('click', () => {
+        if (currentInput) {
+            const currentNumber = parseFloat(currentInput); // Parse current input
+            total = operator ? operators[operator](total, currentNumber) : currentNumber;
+            displayTotal.innerHTML = total; // Display the running total
+            currentInput = ''; // Clear current input
+        }
+        operator = button.textContent; // Set the new operator
+    });
+});
+
+// Handle equals button
+document.querySelector('.btn-calculate').addEventListener('click', () => {
+    if (currentInput && operator) {
+        const currentNumber = parseFloat(currentInput); // Parse current input
+        total = operators[operator](total, currentNumber);
+        displayTotal.innerHTML = total; // Display the final result
+        currentInput = ''; // Clear current input
+        operator = ''; // Clear operator
+    }
+});
+
+// Handle clear button
+document.querySelector('.btn-clear').addEventListener('click', () => {
+    total = 0;
+    currentInput = '';
+    operator = '';
+    displayTotal.innerHTML = total;
+});
+
+</script>
+</html>
