@@ -208,6 +208,7 @@ let operator = '';       // Current operator
 // Handle number button clicks
 document.querySelectorAll('.btn-number').forEach(button => {
     button.addEventListener('click', () => {
+        if(currentInput.length > 10){return}; // Limit input length
         currentInput += button.textContent; // Append digit to current input
         displayTotal.innerHTML = currentInput; // Show the current input
     });
